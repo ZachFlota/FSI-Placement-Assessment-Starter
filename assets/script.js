@@ -1,23 +1,78 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
+
 
 // First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
+let yourName = "Zach Flota" // HINT: Replace this with your own name!
+
+// Code to update name display 
+document.getElementById('credit').textContent = `Created by ${yourName}`
 
 // We'll use these variables to track the counts of each cookie type
 let gb = 0      // Gingerbread
 let cc = 0      // Chocolate Chip
 let sugar = 0   // Sugar Sprinkle
 
-// Code to update name display 
-document.getElementById('credit').textContent = `Created by ${yourName}`
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
-document.getElementById('add-gb').addEventListener('click', function() {
-    // HINT: You can delete this console.log after you no longer need it!
-    console.log('Gingerbread + button was clicked!')
+let gbquantity = document.querySelector('#qty-gb')
+let ccquantity = document.querySelector('#qty-cc')
+let sugarquantity = document.querySelector('#qty-sugar')
 
-    // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+// Buttons
+const addgb = document.querySelector('#add-gb')
+const minusgb = document.querySelector('#minus-gb')
+
+const addcc = document.querySelector('#add-cc')
+const minuscc = document.querySelector('#minus-cc')
+
+const addsugar = document.querySelector('#add-sugar')
+const minussugar = document.querySelector('#minus-sugar')
+
+
+
+// Add event listeners to increase gingerbread quantity
+addgb.addEventListener('click', function(e){
+    console.log('button is clicked')
+    gb++
+    gbquantity.textContent = gb
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+//Add event listeners to decrease gingerbread quantity
+minusgb.addEventListener('click', function(e){
+    console.log('button is clicked')
+    if (gb > 0) {
+        gb--
+        gbquantity.textContent = gb
+    }
+})
+
+//Add event listeners to increase chocolate chip quantity
+addcc.addEventListener('click', function(e){
+    cc++
+    ccquantity.textContent = cc
+})
+
+//Add event listeners to decrease chocolate chip quantity
+minuscc.addEventListener('click', function(e){
+    if (cc > 0) {
+        cc--
+        ccquantity.textContent = cc
+    }
+})
+
+//Add event listeners to increase sugar sprinkle quantity
+addsugar.addEventListener('click', function(e){
+    sugar++
+    sugarquantity.textContent = sugar
+})
+
+//Add event listener to decrease sugar sprinkle quantity
+minussugar.addEventListener('click', function(e){
+    if (sugar > 0){
+        sugar--
+        sugarquantity.textContent = sugar
+    }
+})
+
+    
+
+
+
