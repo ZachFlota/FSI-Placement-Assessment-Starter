@@ -16,6 +16,8 @@ let gbquantity = document.querySelector('#qty-gb')
 let ccquantity = document.querySelector('#qty-cc')
 let sugarquantity = document.querySelector('#qty-sugar')
 
+let totalquantity = document.querySelector('#qty-total')
+
 // Buttons
 const addgb = document.querySelector('#add-gb')
 const minusgb = document.querySelector('#minus-gb')
@@ -33,6 +35,7 @@ addgb.addEventListener('click', function(e){
     console.log('button is clicked')
     gb++
     gbquantity.textContent = gb
+    totalquantity.textContent = gb + cc + sugar
 })
 
 //Add event listeners to decrease gingerbread quantity
@@ -41,6 +44,7 @@ minusgb.addEventListener('click', function(e){
     if (gb > 0) {
         gb--
         gbquantity.textContent = gb
+        totalquantity.textContent = gb + cc + sugar
     }
 })
 
@@ -48,6 +52,7 @@ minusgb.addEventListener('click', function(e){
 addcc.addEventListener('click', function(e){
     cc++
     ccquantity.textContent = cc
+    totalquantity.textContent = gb + cc + sugar
 })
 
 //Add event listeners to decrease chocolate chip quantity
@@ -55,6 +60,7 @@ minuscc.addEventListener('click', function(e){
     if (cc > 0) {
         cc--
         ccquantity.textContent = cc
+        totalquantity.textContent = gb + cc + sugar
     }
 })
 
@@ -62,6 +68,7 @@ minuscc.addEventListener('click', function(e){
 addsugar.addEventListener('click', function(e){
     sugar++
     sugarquantity.textContent = sugar
+    totalquantity.textContent = gb + cc + sugar
 })
 
 //Add event listener to decrease sugar sprinkle quantity
@@ -69,6 +76,7 @@ minussugar.addEventListener('click', function(e){
     if (sugar > 0){
         sugar--
         sugarquantity.textContent = sugar
+        totalquantity.textContent = gb + cc + sugar
     }
 })
 
